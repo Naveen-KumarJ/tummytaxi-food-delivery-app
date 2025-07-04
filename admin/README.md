@@ -118,5 +118,3 @@ Open to suggestions, feature requests, and contributions! Feel free to fork and 
 ## 🙌 Author
 
 Built with ❤️ by [Naveen Kumar J](https://github.com/Naveen-KumarJ)
-
-```
