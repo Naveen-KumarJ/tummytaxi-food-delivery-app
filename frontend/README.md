@@ -27,7 +27,7 @@ Welcome to the **frontend** of **TummyTaxi** — a modern, responsive food deliv
 
 frontend/
 ├── components/       # Reusable UI components (Navbar, Footer, Hero, etc.)
-│   └── context/      # Global Store using React Context API
+├── context/      # Global Store using React Context API
 ├── pages/            # Route-based pages (Home, Cart, Menu, etc.)
 ├── App.jsx           # Root component with layout
 ├── main.jsx          # App entry point
