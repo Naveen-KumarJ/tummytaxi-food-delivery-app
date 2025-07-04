@@ -16,7 +16,6 @@ This full-stack application is built using modern web technologies, optimized fo
 - **Icons**: React Icons
 - **Notifications**: React Toastify
 - **Utilities**: Axios, Moment.js
-- **Linting & Dev Tools**: ESLint, TypeScript types, Vite Preview
 
 ### 🎛️ Admin Panel (Restaurant Dashboard)
 
@@ -26,7 +25,6 @@ This full-stack application is built using modern web technologies, optimized fo
 - **State/API**: Axios, FormData
 - **Notifications**: React Toastify
 - **Icons**: React Icons
-- **Code Quality**: ESLint, React Refresh plugin
 
 ### 🧠 Backend (API Server)
 
@@ -44,6 +42,25 @@ This full-stack application is built using modern web technologies, optimized fo
 ---
 
 All modules are kept modular, version-pinned, and follow the latest best practices. Each module (`admin`, `frontend`, `backend`) contains its own detailed setup instructions in their respective `README.md` files.
+
+---
+
+## 🌐 Live Demo
+
+🔗 [Click here to view the Live TummyTaxi Frontend](https://tummytaxi-food-delivery-frontend.onrender.com/)
+
+---
+
+## 📘 API Documentation
+
+📄 All backend REST API endpoints and documentation are provided inside the [`backend`](./backend/README.md) folder.  
+Includes routes for:
+- User authentication
+- Food listing & categories
+- Cart management
+- Order placement
+- Payment (Razorpay)
+- Admin APIs for food and order control
 
 ---
 
@@ -108,7 +125,8 @@ npm run dev
 * Browse food menu with categories
 * Add to cart, place order, and track status
 * Admin dashboard to manage orders and food items
-* Order history and delivery address management
+* Order history
+* Payment gateway integration with Razorpay
 
 ---
 
