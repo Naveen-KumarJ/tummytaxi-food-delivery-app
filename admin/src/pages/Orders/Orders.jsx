@@ -39,7 +39,7 @@ const Orders = () => {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.put(
-        "http://localhost:8080/api/v1/order/update-status",
+        `${SERVER_URL}/api/v1/order/update-status`,
         { orderId, status: newStatus },
         {
           headers: {
