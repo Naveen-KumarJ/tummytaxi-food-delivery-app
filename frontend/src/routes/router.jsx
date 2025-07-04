@@ -7,6 +7,8 @@ import PlaceOrder from "../pages/PlaceOrder/PlaceOrder";
 import Menu from "../pages/Menu/Menu";
 import ProtectedRoute from "./ProtectedRoute";
 import MyOrders from "../pages/MyOrders/MyOrders";
+import MobileApp from "../pages/MobileApp/MobileApp";
+import ContactUs from "../pages/ContactUs/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +52,8 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
+      { path: "/mobile-app", element: <MobileApp /> },
+      { path: "/contact-us", element: <ContactUs /> },
     ],
   },
 ]);

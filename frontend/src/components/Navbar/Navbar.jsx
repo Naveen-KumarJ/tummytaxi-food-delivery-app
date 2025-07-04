@@ -42,7 +42,7 @@ const Navbar = ({ setShowLogin }) => {
         onClick={() => navigate("/")}
         src={assets.logo}
         alt="logo"
-        className="w-[130px] cursor-pointer"
+        className="w-[150px] cursor-pointer"
       />
 
       {/* Desktop Navigation */}
