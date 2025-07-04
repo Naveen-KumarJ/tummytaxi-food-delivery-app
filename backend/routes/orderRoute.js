@@ -13,7 +13,7 @@ const router = express.Router();
 router.post("/place", authMiddleware, placeOrder);
 router.post("/verify", authMiddleware, verifyAndSaveOrder);
 router.get("/my-orders", authMiddleware, getUserOrders);
-router.put("/update-status", authMiddleware, updateOrderStatus);
+router.put("/update-status", updateOrderStatus);
 router.get("/all-orders", getAllOrders);
 
 module.exports = router;
