@@ -5,7 +5,7 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState({});
-  const SERVER_URL = "http://localhost:8080"; // ✅ Replace with env var in production
+  const SERVER_URL = "https://tummytaxi-food-delivery-backend.onrender.com";
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
 
