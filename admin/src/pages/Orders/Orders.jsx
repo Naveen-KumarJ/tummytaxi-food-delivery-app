@@ -135,7 +135,7 @@ const Orders = () => {
                     </select>
                   </td>
                   <td className="py-3 px-4 text-sm text-gray-500">
-                    {new Date(order.createdAt).toLocaleString()}
+                    {new Date(order.date).toLocaleString()}
                   </td>
                 </tr>
               ))}
