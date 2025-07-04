@@ -1,12 +1,122 @@
-# React + Vite
+# 🧑‍🍳 TummyTaxi Admin Panel
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **Admin Panel** for **TummyTaxi**, a full-stack food delivery web application. The admin interface enables restaurant owners or managers to manage food items, view orders, and update order statuses via a clean and responsive dashboard.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tech Stack
 
-## Expanding the ESLint configuration
+- **React 19**
+- **Vite 7**
+- **React Router DOM v7.6**
+- **Tailwind CSS v4**
+- **React Icons**
+- **Axios** for API requests
+- **React Toastify** for alerts and notifications
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📁 Folder Structure
+
+```
+
+admin/
+├── components/
+│   ├── Navbar/         # Top navigation bar
+│   └── Sidebar/        # Sidebar with navigation links
+├── config/
+│   └── serverURL.js    # Contains the backend API base URL
+├── pages/
+│   ├── Add/            # Add new food items
+│   ├── List/           # View/edit/delete food items
+│   ├── Orders/         # View and update order statuses
+│   └── Error/          # Fallback error page
+├── routes/
+│   └── Router.jsx      # Application routing setup
+├── App.jsx             # Layout and routing wrapper
+├── main.jsx            # App entry point
+├── index.css           # Tailwind base styles
+└── README.md           # You are here 📍
+
+````
+
+---
+
+## 🌐 Routes
+
+| Route       | Description                 |
+|------------|-----------------------------|
+| `/` or `/add`   | Add new food items         |
+| `/list`     | Manage the existing food menu |
+| `/orders`   | View all orders and change status |
+| `*`         | Error fallback route         |
+
+---
+
+## 🧩 Features
+
+- 🔐 Secure access to admin functions
+- 📋 Add, view, edit, and delete food items
+- 🚚 View all orders and change their status (e.g., Delivered, Cancelled)
+- 📊 Responsive design with a clean sidebar and navigation
+- 🧠 API-integrated using Axios and token-based auth
+- 📦 Modular components for maintainability
+
+---
+
+## 🔧 Setup Instructions
+
+> 💡 Make sure the backend server is running and accessible.
+
+### 1. Clone and Install
+
+```bash
+cd admin
+npm install
+````
+
+### 2. Start the development server
+
+```bash
+npm run dev
+```
+
+---
+
+## ⚙️ Configuration
+
+Set the API base URL in (Currently Sample URL is Hardcoded):
+
+```js
+// config/serverURL.js
+export const SERVER_URL = "https://tummytaxi-food-delivery-backend.com";
+```
+
+---
+
+## 🔌 Connected Backend Endpoints
+
+All data is fetched and managed using the backend APIs located in the `../backend` folder:
+
+* `/api/v1/food/add`
+* `/api/v1/food/list`
+* `/api/v1/food/remove`
+* `/api/v1/order/all-orders`
+* `/api/v1/order/update-status`
+* ...and more
+
+> Full endpoint documentation is available inside the [`backend/README.md`](../backend/README.md)
+
+---
+
+## 🤝 Contribution
+
+Open to suggestions, feature requests, and contributions! Feel free to fork and PR.
+
+---
+
+## 🙌 Author
+
+Built with ❤️ by [Naveen Kumar J](https://github.com/Naveen-KumarJ)
+
+```
