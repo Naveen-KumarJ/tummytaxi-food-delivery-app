@@ -1,9 +1,7 @@
 import axios from "axios";
 import { StoreContext } from "../../context/StoreContext";
 import moment from "moment";
-import { useContext } from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 
 const MyOrders = () => {
   const { token, SERVER_URL, food_list } = useContext(StoreContext);
@@ -26,9 +24,7 @@ const MyOrders = () => {
         setError("Failed to fetch orders");
       }
     } catch (err) {
-      setError(
-        "Something went wrong while fetching your orders." + err.message
-      );
+      setError("Something went wrong while fetching your orders. " + err.message);
     } finally {
       setLoading(false);
     }
@@ -42,6 +38,8 @@ const MyOrders = () => {
         return "text-blue-500";
       case "Delivered":
         return "text-green-600";
+      case "Cancelled":
+        return "text-red-500";
       default:
         return "text-gray-600";
     }
@@ -52,23 +50,23 @@ const MyOrders = () => {
   }, [token]);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8 min-h-screen bg-gray-50">
-      <h2 className="text-3xl font-bold text-gray-800 mb-6">My Orders</h2>
+    <div className="max-w-6xl mx-auto px-4 py-10 min-h-screen bg-gray-50">
+      <h2 className="text-3xl font-bold text-gray-800 text-center mb-10">My Orders</h2>
 
       {loading ? (
-        <p className="text-gray-600">Loading your orders...</p>
+        <p className="text-gray-600 text-center">Loading your orders...</p>
       ) : error ? (
-        <p className="text-red-500">{error}</p>
+        <p className="text-red-500 text-center">{error}</p>
       ) : orders.length === 0 ? (
-        <p className="text-gray-600">You have not placed any orders yet.</p>
+        <p className="text-gray-600 text-center">You have not placed any orders yet.</p>
       ) : (
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {orders.map((order, index) => (
             <div
               key={order._id}
-              className="bg-white p-6 rounded-lg shadow-sm border hover:shadow transition-all duration-300"
+              className="bg-white p-6 rounded-2xl shadow-md border border-gray-200 transition hover:shadow-lg"
             >
-              <div className="flex justify-between items-center mb-4">
+              <div className="flex justify-between items-start mb-4">
                 <div>
                   <h3 className="text-lg font-semibold text-gray-800">
                     Order #{index + 1}
@@ -78,23 +76,17 @@ const MyOrders = () => {
                   </p>
                 </div>
                 <span
-                  className={`text-sm font-medium ${getStatusColor(
-                    order.status || "Placed"
-                  )}`}
+                  className={`text-xs font-semibold px-3 py-1 rounded-full bg-opacity-10 ${getStatusColor(order.status || "Placed")}`}
                 >
                   {order.status || "Placed"}
                 </span>
               </div>
 
-              {/* Items */}
-              <div className="space-y-3 border-t pt-4">
+              <div className="space-y-2 border-t pt-4">
                 {order.items.map((item, idx) => {
                   const foodItem = food_list.find((f) => f._id === item._id);
                   return (
-                    <div
-                      key={idx}
-                      className="flex justify-between items-center text-sm"
-                    >
+                    <div key={idx} className="flex justify-between text-sm">
                       <span className="text-gray-700">
                         {foodItem?.name || "Item"} × {item.quantity}
                       </span>
@@ -106,23 +98,18 @@ const MyOrders = () => {
                 })}
               </div>
 
-              {/* Address */}
               <div className="mt-4">
-                <h4 className="text-sm font-semibold text-gray-700 mb-1">
-                  Delivery Address:
-                </h4>
+                <h4 className="text-sm font-semibold text-gray-700 mb-1">Delivery Address:</h4>
                 <p className="text-sm text-gray-600 leading-relaxed">
                   {order.address.firstName} {order.address.lastName},<br />
                   {order.address.street}, {order.address.city},{" "}
-                  {order.address.state} - {order.address.zipCode},{" "}
-                  {order.address.country}
-                  <br />
+                  {order.address.state} - {order.address.zipCode},<br />
+                  {order.address.country} <br />
                   📞 {order.address.phone}
                 </p>
               </div>
 
-              {/* Total */}
-              <div className="mt-4 flex justify-end text-base font-bold text-gray-800">
+              <div className="mt-4 text-right text-base font-bold text-gray-800">
                 Total: ₹{order.amount}
               </div>
             </div>
