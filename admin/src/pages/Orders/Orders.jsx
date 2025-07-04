@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { SERVER_URL } from "../../config/serverURL";
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -11,7 +12,7 @@ const Orders = () => {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.get(
-        "http://localhost:8080/api/v1/order/all-orders",
+        `${SERVER_URL}/api/v1/order/all-orders`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
