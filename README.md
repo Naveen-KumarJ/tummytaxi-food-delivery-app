@@ -87,7 +87,7 @@ Each folder contains its own `README.md` with setup and usage instructions.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/tummytaxi.git
+git clone https://github.com/Naveen-KumarJ/tummytaxi-food-delivery-app
 cd tummytaxi
 ````
 
